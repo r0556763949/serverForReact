@@ -25,7 +25,7 @@ router.post('/register', (req, res) => {
         address,
         phone,
         lastName,
-        firstName // במציאות – להצפין סיסמא
+        firstName 
     };
 
     db.users.push(newUser);
@@ -65,7 +65,6 @@ router.put('/', authMiddleware, (req, res) => {
     user.email = email;
     user.address = address;
     user.phone = phone;
-
     fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
 
     res.json(user);
